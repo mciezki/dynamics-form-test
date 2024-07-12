@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/dynamics-form-test/static/css/main.2bf0d3f7.css",
+    "main.js": "/dynamics-form-test/static/js/main.11620e22.js",
+    "index.html": "/dynamics-form-test/index.html",
+    "main.2bf0d3f7.css.map": "/dynamics-form-test/static/css/main.2bf0d3f7.css.map",
+    "main.11620e22.js.map": "/dynamics-form-test/static/js/main.11620e22.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2bf0d3f7.css",
+    "static/js/main.11620e22.js"
+  ]
+}
