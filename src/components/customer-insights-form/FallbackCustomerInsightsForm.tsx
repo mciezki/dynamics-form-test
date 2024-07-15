@@ -2,22 +2,22 @@
 import React, { useEffect } from 'react';
 
 const FallbackCustomerInsightsForm: React.FC = () => {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src =
-      'https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js';
-    script.async = true;
+  // useEffect(() => {
+  //   const script = document.createElement('script');
+  //   script.src =
+  //     'https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js';
+  //   script.async = true;
 
-    script.onload = () => {
-      console.log('External script loaded successfully');
-    };
+  //   script.onload = () => {
+  //     console.log('External script loaded successfully');
+  //   };
 
-    document.body.appendChild(script);
+  //   document.body.appendChild(script);
 
-    return () => {
-      document.body.removeChild(script);
-    };
-  }, []);
+  //   return () => {
+  //     document.body.removeChild(script);
+  //   };
+  // }, []);
 
   return (
     <div
