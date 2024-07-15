@@ -1,4 +1,20 @@
 /* src/components/styles.css */
+.app {
+  padding: 50px;
+}
+
+.checkbox-label {
+  margin-top: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.checkbox-label input {
+  width: min-content;
+  padding: 0;
+}
+
 .form-group {
   margin-bottom: 15px;
 }
@@ -20,6 +36,7 @@ button {
   color: white;
   border: none;
   cursor: pointer;
+  width: 100%;
 }
 
 button:hover {

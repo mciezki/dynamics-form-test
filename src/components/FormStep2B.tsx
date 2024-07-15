@@ -19,7 +19,8 @@ const FormStep2B: React.FC<FormStep2BProps> = ({ onNext }) => {
         <div className='form-group'>
           <label>Are you sure? It can be very expensive.</label>
           <div>
-            <label>
+            <label className='checkbox-label'>
+              Yes
               <input
                 type='radio'
                 name='sure'
@@ -27,9 +28,9 @@ const FormStep2B: React.FC<FormStep2BProps> = ({ onNext }) => {
                 checked={sure === true}
                 onChange={(e) => setSure(true)}
               />
-              Yes
             </label>
-            <label>
+            <label className='checkbox-label'>
+              No
               <input
                 type='radio'
                 name='sure'
@@ -37,7 +38,6 @@ const FormStep2B: React.FC<FormStep2BProps> = ({ onNext }) => {
                 checked={sure === false}
                 onChange={(e) => setSure(false)}
               />
-              No
             </label>
           </div>
         </div>
