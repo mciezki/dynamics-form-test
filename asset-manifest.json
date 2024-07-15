@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/dynamics-form-test/static/css/main.1e93aa00.css",
-    "main.js": "/dynamics-form-test/static/js/main.b936962d.js",
-    "index.html": "/dynamics-form-test/index.html",
-    "main.1e93aa00.css.map": "/dynamics-form-test/static/css/main.1e93aa00.css.map",
-    "main.b936962d.js.map": "/dynamics-form-test/static/js/main.b936962d.js.map"
+    "main.css": "/static/css/main.1e93aa00.css",
+    "main.js": "/static/js/main.b936962d.js",
+    "index.html": "/index.html",
+    "main.1e93aa00.css.map": "/static/css/main.1e93aa00.css.map",
+    "main.b936962d.js.map": "/static/js/main.b936962d.js.map"
   },
   "entrypoints": [
     "static/css/main.1e93aa00.css",
