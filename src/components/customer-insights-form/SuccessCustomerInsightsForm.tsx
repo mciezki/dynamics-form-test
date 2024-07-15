@@ -5,7 +5,7 @@ const SuccessCustomerInsightsForm: React.FC = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src =
-      'https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js';
+      'https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/global/FormLoader/FormLoader.bundle.js';
     script.async = true;
 
     script.onload = () => {
