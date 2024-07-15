@@ -6,7 +6,7 @@ const FallbackCustomerInsightsForm: React.FC = () => {
     const script = document.createElement('script');
     script.src =
       'https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js';
-    script.async = true;
+    // script.async = true;
 
     script.onload = () => {
       console.log('External script loaded successfully');
