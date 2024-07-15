@@ -1,7 +1,24 @@
 // src/components/CustomerInsightsForm.tsx
-import React from 'react';
+import React, { useEffect } from 'react';
 
 const FallbackCustomerInsightsForm: React.FC = () => {
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src =
+      'https://cxppusa1formui01cdnsa01-endpoint.azureedge.net/eur/FormLoader/FormLoader.bundle.js';
+    script.async = true;
+
+    script.onload = () => {
+      console.log('External script loaded successfully');
+    };
+
+    document.body.appendChild(script);
+
+    return () => {
+      document.body.removeChild(script);
+    };
+  }, []);
+
   return (
     <div
       data-form-id='e212f30e-3540-ef11-a316-7c1e52209e09'
