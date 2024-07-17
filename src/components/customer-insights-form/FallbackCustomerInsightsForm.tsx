@@ -1,10 +1,8 @@
 // src/components/CustomerInsightsForm.tsx
-import { useEffect, useLayoutEffect, useState } from 'react';
+import { useEffect, useLayoutEffect } from 'react';
 
 const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
   console.log(data);
-
-  const [isLoaded, setIsLoaded] = useState(false);
 
   const firstNameElement = document.querySelector(
     'input[id^="firstname"]'
@@ -20,7 +18,6 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
     script.async = true;
 
     script.onload = () => {
-      setIsLoaded(true);
       console.log('External script loaded successfully - it should work');
     };
 
@@ -32,16 +29,27 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
   }, []);
 
   useEffect(() => {
-    if (isLoaded) {
+    const interval = setInterval(() => {
       if (firstNameElement && !firstNameElement.value) {
         firstNameElement.value = data.name;
       }
       if (surnameElement && !surnameElement.value) {
         surnameElement.value = data.surname;
       }
+    }, 100);
+
+    if (
+      firstNameElement &&
+      surnameElement &&
+      firstNameElement.value &&
+      surnameElement.value
+    ) {
+      clearInterval(interval);
     }
+
+    return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [isLoaded, firstNameElement, surnameElement]);
+  }, [firstNameElement, surnameElement]);
 
   return (
     <div
