@@ -44,6 +44,7 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
       ) {
         clearInterval(interval);
       }
+      console.log('interval is working');
     }, 100);
 
     return () => clearInterval(interval);
