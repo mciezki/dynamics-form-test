@@ -5,7 +5,7 @@ interface FormStep2AProps {
   onNext: (data: any) => void;
 }
 
-const FormStep2A: React.FC<FormStep2AProps> = ({ onNext }) => {
+const FormStep2A = ({ onNext }: FormStep2AProps) => {
   const [formData, setFormData] = useState({
     parcelArea: '',
   });

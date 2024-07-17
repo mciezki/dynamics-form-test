@@ -8,13 +8,7 @@ interface FormInputProps {
   onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-const FormInput: React.FC<FormInputProps> = ({
-  label,
-  type,
-  name,
-  value,
-  onChange,
-}) => {
+const FormInput = ({ label, type, name, value, onChange }: FormInputProps) => {
   return (
     <div className='form-group'>
       <label htmlFor={name}>{label}</label>

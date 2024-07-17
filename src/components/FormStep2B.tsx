@@ -4,7 +4,7 @@ interface FormStep2BProps {
   onNext: (data: any) => void;
 }
 
-const FormStep2B: React.FC<FormStep2BProps> = ({ onNext }) => {
+const FormStep2B = ({ onNext }: FormStep2BProps) => {
   const [sure, setSure] = useState<boolean>();
 
   const handleSubmit = (e: React.FormEvent) => {

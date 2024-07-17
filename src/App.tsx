@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import FormStep1 from './components/FormStep1';
 import FormStep2A from './components/FormStep2A';
 import FormStep2B from './components/FormStep2B';
@@ -6,7 +6,7 @@ import FormFinalA from './components/FormFinalA';
 import FormFinalB from './components/FormFinalB';
 import './components/styles.css';
 
-const App: React.FC = () => {
+const App = () => {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<any>({});
 
@@ -27,9 +27,9 @@ const App: React.FC = () => {
         }
       case 3:
         if (formData.parcelArea >= 1000 || formData.sure) {
-          return <FormFinalA />;
+          return <FormFinalA data={formData} />;
         } else {
-          return <FormFinalB />;
+          return <FormFinalB formData={formData} />;
         }
       default:
         return null;

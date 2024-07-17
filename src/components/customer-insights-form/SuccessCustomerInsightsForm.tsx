@@ -1,7 +1,7 @@
 // src/components/CustomerInsightsForm.tsx
-import React, { useLayoutEffect } from 'react';
+import { useLayoutEffect } from 'react';
 
-const SuccessCustomerInsightsForm: React.FC = () => {
+const SuccessCustomerInsightsForm = () => {
   useLayoutEffect(() => {
     const script = document.createElement('script');
     script.src =

@@ -1,7 +1,18 @@
 // src/components/CustomerInsightsForm.tsx
-import React, { useLayoutEffect } from 'react';
+import { useEffect, useLayoutEffect, useState } from 'react';
 
-const FallbackCustomerInsightsForm: React.FC = () => {
+const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
+  console.log(data);
+
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  const firstNameElement = document.querySelector(
+    'input[id^="firstname"]'
+  ) as HTMLInputElement;
+  const surnameElement = document.querySelector(
+    'input[id^="lastname"]'
+  ) as HTMLInputElement;
+
   useLayoutEffect(() => {
     const script = document.createElement('script');
     script.src =
@@ -9,6 +20,7 @@ const FallbackCustomerInsightsForm: React.FC = () => {
     script.async = true;
 
     script.onload = () => {
+      setIsLoaded(true);
       console.log('External script loaded successfully - it should work');
     };
 
@@ -18,6 +30,18 @@ const FallbackCustomerInsightsForm: React.FC = () => {
       document.body.removeChild(script);
     };
   }, []);
+
+  useEffect(() => {
+    if (isLoaded) {
+      if (firstNameElement && !firstNameElement.value) {
+        firstNameElement.value = data.name;
+      }
+      if (surnameElement && !surnameElement.value) {
+        surnameElement.value = data.surname;
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isLoaded, firstNameElement, surnameElement]);
 
   return (
     <div

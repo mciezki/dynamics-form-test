@@ -7,7 +7,8 @@ import SuccessCustomerInsightsForm from './customer-insights-form/SuccessCustome
 //   onSubmit: (data: any) => void;
 // }
 
-const FormFinalA: React.FC = () => {
+const FormFinalA = ({ data }: { data: any }) => {
+  console.log(data);
   return <SuccessCustomerInsightsForm />;
 };
 
