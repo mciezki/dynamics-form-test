@@ -4,13 +4,6 @@ import { useEffect, useLayoutEffect } from 'react';
 const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
   console.log(data);
 
-  const firstNameElement = document.querySelector(
-    'input[id^="firstname"]'
-  ) as HTMLInputElement;
-  const surnameElement = document.querySelector(
-    'input[id^="lastname"]'
-  ) as HTMLInputElement;
-
   useLayoutEffect(() => {
     const script = document.createElement('script');
     script.src =
@@ -30,31 +23,32 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
 
   useEffect(() => {
     const interval = setInterval(() => {
+      const firstNameElement = document.querySelector(
+        'input[id^="firstname"]'
+      ) as HTMLInputElement;
+      const surnameElement = document.querySelector(
+        'input[id^="lastname"]'
+      ) as HTMLInputElement;
+
       if (firstNameElement && !firstNameElement.value) {
         firstNameElement.value = data.name;
       }
       if (surnameElement && !surnameElement.value) {
         surnameElement.value = data.surname;
       }
+      if (
+        surnameElement &&
+        firstNameElement &&
+        surnameElement.value &&
+        firstNameElement.value
+      ) {
+        clearInterval(interval);
+      }
     }, 100);
-
-    console.log('firstname: ', firstNameElement);
-    console.log('surname: ', surnameElement);
-
-    if (
-      firstNameElement &&
-      surnameElement &&
-      firstNameElement.value &&
-      surnameElement.value
-    ) {
-      console.log('firstname: ', firstNameElement);
-      console.log('surname: ', surnameElement);
-      clearInterval(interval);
-    }
 
     return () => clearInterval(interval);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [firstNameElement, surnameElement]);
+  }, []);
 
   return (
     <div
