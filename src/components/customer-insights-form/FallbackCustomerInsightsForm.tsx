@@ -28,9 +28,6 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
     };
   }, []);
 
-  console.log('firstname: ', firstNameElement);
-  console.log('surname: ', surnameElement);
-
   useEffect(() => {
     const interval = setInterval(() => {
       if (firstNameElement && !firstNameElement.value) {
@@ -41,12 +38,17 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
       }
     }, 100);
 
+    console.log('firstname: ', firstNameElement);
+    console.log('surname: ', surnameElement);
+
     if (
       firstNameElement &&
       surnameElement &&
       firstNameElement.value &&
       surnameElement.value
     ) {
+      console.log('firstname: ', firstNameElement);
+      console.log('surname: ', surnameElement);
       clearInterval(interval);
     }
 
