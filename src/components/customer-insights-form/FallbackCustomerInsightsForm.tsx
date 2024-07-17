@@ -28,6 +28,9 @@ const FallbackCustomerInsightsForm = ({ data }: { data: any }) => {
     };
   }, []);
 
+  console.log('firstname: ', firstNameElement);
+  console.log('surname: ', surnameElement);
+
   useEffect(() => {
     const interval = setInterval(() => {
       if (firstNameElement && !firstNameElement.value) {
